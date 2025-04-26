@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Emprunts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Gestion des Emprunts</h1>
+
+    <!-- Formulaire de création d'emprunt -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3>Emprunter un Livre</h3>
+        <form id="loanForm">
+          <div class="mb-3">
+            <label for="bookId" class="form-label">Livre</label>
+            <select class="form-control" id="bookId" required></select>
+          </div>
+          <div class="mb-3">
+            <label for="studentId" class="form-label">Étudiant</label>
+            <select class="form-control" id="studentId" required></select>
+          </div>
+          <div class="mb-3">
+            <label for="dueDate" class="form-label">Date de Retour</label>
+            <input type="date" class="form-control" id="dueDate" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Emprunter le Livre</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Liste des emprunts actifs -->
+    <h3>Emprunts Actifs</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Livre</th>
+          <th>Étudiant</th>
+          <th>Date d'Emprunt</th>
+          <th>Date de Retour</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="loansTable"></tbody>
+    </table>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/loans.js"></script>
+</body>
+</html>

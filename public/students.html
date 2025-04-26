@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Étudiants</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Gestion des Étudiants</h1>
+
+    <!-- Formulaire de création d'étudiant -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3>Ajouter un Nouvel Étudiant</h3>
+        <form id="studentForm">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="firstName" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="lastName" required>
+          </div>
+          <div class="mb-3">
+            <label for="studentId" class="form-label">Identifiant Étudiant</label>
+            <input type="text" class="form-control" id="studentId" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Ajouter l'Étudiant</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Liste des étudiants -->
+    <h3>Liste des Étudiants</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Identifiant Étudiant</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentsTable"></tbody>
+    </table>
+  </div>
+
+  <!-- Modale de mise à jour de l'étudiant -->
+  <div class="modal fade" id="updateStudentModal" tabindex="-1" aria-labelledby="updateStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateStudentModalLabel">Mettre à Jour l'Étudiant</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="updateStudentForm">
+            <input type="hidden" id="updateStudentId">
+            <div class="mb-3">
+              <label for="updateFirstName" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="updateFirstName" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateLastName" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="updateLastName" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateStudentId" class="form-label">Identifiant Étudiant</label>
+              <input type="text" class="form-control" id="updateStudentId" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="updateEmail" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Mettre à Jour l'Étudiant</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/students.js"></script>
+</body>
+</html>
